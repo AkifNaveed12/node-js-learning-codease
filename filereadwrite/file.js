@@ -1,32 +1,42 @@
 // creating and writing into a file
 
 const fs = require('fs');
-// fs.writeFileSync("./writetest.txt", "this filw was created using sync file read ");
-// fs.writeFile("./writetest.txt", "overridden content through async file write", (e)=>e);// file path, data, call back
+fs.writeFileSync("./writetest.txt", "this filw was created using sync file read ");
+fs.writeFile("./writetest.txt", "overridden content through async file write", (e)=>e);// file path, data, call back
 
 // reading the file
-// const read = fs.readFileSync("./contacts.txt", "utf-8"); //file path, encoding scheme
-// console.log(read);
+const read = fs.readFileSync("./contacts.txt", "utf-8"); //file path, encoding scheme
+console.log(read);
 
-// const Read = fs.readFile("./contacts.txt", "utf-8", (err, result) => {
-//     if(err){
-//         console.log("Error: ", err);
-//     } else{
-//         console.log(result);
-//     }
-// });
+const Read = fs.readFile("./contacts.txt", "utf-8", (err, result) => {
+    if(err){
+        console.log("Error: ", err);
+    } else{
+        console.log(result);
+    }
+});
 
 //async requires us to write a call back and then it does'nt provides the ans/data directly
 //we have to get it though a call back but in sync we get direct in a variable
 
 //appending data into the files
 
-//fs.appendFileSync("./writetest.txt", `today is ${new Date().getDate().toLocaleString()} !`);
+fs.appendFileSync("./writetest.txt", `today is ${new Date().getDate().toLocaleString()} !`);
 
 
 //copying  a file
-
 fs.cpSync("./contacts.txt", "./cpyContacts.txt");
 
+//deleting a file
+fs.unlinkSync("./cpyContacts.txt");
 
+// stats of a file
+console.log(fs.statSync("./writetest.txt"));
+
+console.log(fs.statSync("./writetest.txt").isDirectory());
+console.log(fs.statSync("./writetest.txt").isFile());
+
+//creating folders
+
+console.log(fs.mkdirSync("./my-docs/a/b", {recursive: true}));
 
