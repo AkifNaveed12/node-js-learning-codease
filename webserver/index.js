@@ -14,9 +14,20 @@ const myServer = http.createServer((req, res) => {
     // understand request contents, req is an object
     console.log(req)
     console.log("New Request Recived!");
-    const log = `${Date.now()}: New Req Recived!\n`;
+    const log = `${Date.now()}: ${req.url} : New Req Recived!\n`;
     fs.appendFile('log.txt', log, (err, data) => {
-        res.end("hello from server");
+
+        switch(req.url){
+            case "/":
+                res.end("HomePage");
+                break;
+            case "/about":
+                res.end("im akif naveed");
+                break;
+            default:
+                res.end("404 Not Found")
+        }
+        // res.end("hello from server");
     });
     
 });

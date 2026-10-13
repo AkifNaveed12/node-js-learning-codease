@@ -1,2 +1,13 @@
 1791908597198: New Req Recived!
 1791908597709: New Req Recived! // one extra call for the fav icon
+1791908777488: / : New Req Recived!
+1791908778002: /favicon.ico : New Req Recived!
+1791908973739: / : New Req Recived!
+1791909037873: /about : New Req Recived!
+1791909114302: / : New Req Recived!
+1791909374206: /contact-us : New Req Recived!
+1791909374711: /favicon.ico : New Req Recived!
+1791909393707: / : New Req Recived!
+1791909393852: /favicon.ico : New Req Recived!
+1791909398705: /about : New Req Recived!
+1791909398823: /favicon.ico : New Req Recived!
