@@ -1,20 +1,6 @@
-1791973727836: / : New Req Recived!
-1791973767508: /about : New Req Recived!
-1791973894512: /about?myname=akif : New Req Recived!
-1791974180285: /about?myname=akif : New Req Recived!
-1791974283096: /about?myname=akif&user_id=1 : New Req Recived!
-1791974319087: /about?myname=akif&user_id=1 : New Req Recived!
-1791974643324: /about?myname=akif&user_id=1 : New Req Recived!
-1791974659942: /about : New Req Recived!
-1791974704781: /about?myname=akifnaveed&userId=2 : New Req Recived!
-1791974737354: /about?myname=naveed&userId=2 : New Req Recived!
-1791974948954: /about?myname=naveed&userId=2 : New Req Recived!
-1791975232021: /about?myname=naveed&userId=2 : New Req Recived!
-1791975254084: /about?myname=Akif&userId=1 : New Req Recived!
-1791975419816: /about?myname=Akif&userId=1 : New Req Recived!
-1791975448188: /about : New Req Recived!
-1791975485030: /about?search_query=javascript_by+akif : New Req Recived!
-1791975517413: /about?search_query=javascript+by+akif : New Req Recived!
-1791975528019: /about?search=javascript+by+akif : New Req Recived!
-1791975598923: /search?search_query=javascript+by+akif : New Req Recived!
-1791975617940: /search?search_query=javascript+by+akif : New Req Recived!
+1791976815845: GET : / : New Req Recived!
+1791976835567: GET : /about : New Req Recived!
+1791977162050: GET : /signup : New Req Recived!
+1791977204546: GET : /.well-known/appspecific/com.chrome.devtools.json : New Req Recived!
+1791977211675: GET : /signup : New Req Recived!
+1791977211760: GET : /.well-known/appspecific/com.chrome.devtools.json : New Req Recived!

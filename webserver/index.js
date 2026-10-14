@@ -16,7 +16,7 @@ const myServer = http.createServer((req, res) => {
     // understand request contents, req is an object
     console.log(req)
     console.log("New Request Recived!");
-    const log = `${Date.now()}: ${req.url} : New Req Recived!\n`;
+    const log = `${Date.now()}: ${req.method} : ${req.url} : New Req Recived!\n`;
     const myUrl = url.parse(req.url, true); // node parses the query string into an object
 
     // a modern alternative for url.parse
@@ -26,7 +26,7 @@ const myServer = http.createServer((req, res) => {
 
         switch(myUrl.pathname){
             case "/":
-                res.end("HomePage");
+                if(req.method === 'GET') res.end("HomePage");
                 break;
             case "/about":
                 const username = myUrl.query.myname;
@@ -45,6 +45,15 @@ const myServer = http.createServer((req, res) => {
                 const search = myUrl.query.search_query;
                 res.end("here are the results " + search);
                 break;
+
+            case '/signup':
+                if(req.method === 'GET' ) res.end("This is a signup Form");
+                else if(req.method === "POST"){
+                    // db query
+                    res.end("Success");
+                }
+                break;
+
             default:
                 res.end("404 Not Found")
         }
