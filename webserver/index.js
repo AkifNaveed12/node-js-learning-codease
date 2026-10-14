@@ -17,7 +17,10 @@ const myServer = http.createServer((req, res) => {
     console.log(req)
     console.log("New Request Recived!");
     const log = `${Date.now()}: ${req.url} : New Req Recived!\n`;
-    const myUrl = url.parse(req.url);
+    const myUrl = url.parse(req.url, true); // node parses the query string into an object
+
+    // a modern alternative for url.parse
+    // const myUrl = new URL(req.url, `http://${req.headers.host}`);
     console.log(myUrl);
     fs.appendFile('log.txt', log, (err, data) => {
 
@@ -26,8 +29,21 @@ const myServer = http.createServer((req, res) => {
                 res.end("HomePage");
                 break;
             case "/about":
-                const username = myUrl.query;
+                const username = myUrl.query.myname;
+                const userId = myUrl.query.userId;
+
+                // modern approach way
+                // const username = myUrl.searchParams.get("myname");
+                // const userId = myUrl.searchParams.get("userId");
+                // console.log(username); // akifnaveed
+                // console.log(userId);   // 2       
+                
                 res.end(`Hi ${username}!`);
+                break;
+            case '/search':
+                // how youtube search query works..
+                const search = myUrl.query.search_query;
+                res.end("here are the results " + search);
                 break;
             default:
                 res.end("404 Not Found")
