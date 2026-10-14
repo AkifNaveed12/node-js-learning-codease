@@ -3,10 +3,12 @@
 const http = require("http");
 
 const fs = require("fs");
+const url = require("url");
 
 //making a web server
 // handler 
 const myServer = http.createServer((req, res) => {
+    if(req.url === '/favicon.ico') return res.end();
     // incoming requests process krny k liye
     // request -> ip address, client side meta data
     // response -> using res
@@ -15,14 +17,17 @@ const myServer = http.createServer((req, res) => {
     console.log(req)
     console.log("New Request Recived!");
     const log = `${Date.now()}: ${req.url} : New Req Recived!\n`;
+    const myUrl = url.parse(req.url);
+    console.log(myUrl);
     fs.appendFile('log.txt', log, (err, data) => {
 
-        switch(req.url){
+        switch(myUrl.pathname){
             case "/":
                 res.end("HomePage");
                 break;
             case "/about":
-                res.end("im akif naveed");
+                const username = myUrl.query;
+                res.end(`Hi ${username}!`);
                 break;
             default:
                 res.end("404 Not Found")
